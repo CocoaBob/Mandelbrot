@@ -99,7 +99,7 @@ static void plot_point (RGB *data, int x, int y, int size);
 }
 
 - (void)computeUsingCL {
-	dispatch_queue_t queue = gcl_create_dispatch_queue(CL_DEVICE_TYPE_GPU, 0);
+	dispatch_queue_t queue = gcl_create_dispatch_queue(CL_DEVICE_TYPE_ALL, 0);
 	
 	GLuint texture = [_mandelView allocateTextureWithData:NULL];
 	cl_image image = gcl_gl_create_image_from_texture(GL_TEXTURE_2D, 0, texture);
